@@ -1,15 +1,26 @@
-// Engine.cpp : Defines the entry point for the console application.
-//
+/***********************************************
+****************MAIN ENGINE FILE****************
+************************************************/
 
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "GameObjects.h"
+#include <vector>
+
+
+//TODO
+//Check gameobjects header file for more TODO list
+//Create an Game Engine class to handle drawing gameobjects, UI, playing sound, collision and level
+//maybe use Game Engine class to handle player and enemy health , damage input?? or maybe just in each of their respective classes??? 
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Welcome to SDVA 103!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
+	sf::RenderWindow window(sf::VideoMode(720, 360), "Welcome to SDVA 103!");
+	
+	Player* player = new Player("Asset_Dump/2d_Metroid/2d_Samus/slice15_15.png", (sf::Vector2f(200, 180)));
+	
+	
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -20,7 +31,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		player->Draw(&window);
 		window.display();
 	}
 
