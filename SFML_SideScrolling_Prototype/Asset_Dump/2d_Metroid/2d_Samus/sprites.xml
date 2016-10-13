@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="Custom Edited - Metroid Customs - Samus Metroid 2.png" x="0" y="0" width="980" height="690"/>
+</TextureAtlas>
